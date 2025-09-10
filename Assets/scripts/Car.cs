@@ -2,38 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CarChassis))]
 public class Car : MonoBehaviour
 {
-    [SerializeField] private WheelCollider[] _wheelsColliders;
-    [SerializeField] private Transform[] _wheelsMeshes;
-    [SerializeField] private float _torqueMotor;
-    [SerializeField] private float _steeringAngle;
-    [SerializeField] private float _torqueBreak;
+    private CarChassis _chassis;
 
-    const string verticalAxis = "Vertical";
-    const string horizontalAxis = "Horizontal";
-    // Start is called before the first frame update
+    [SerializeField] private float _maxMotorRorque;
+    [SerializeField] private float _maxSteerAngle;
+    [SerializeField] private float _maxBrakeTorque;
+
+    public float throttleControl;
+    public float steerControl;
+    public float brakeControl;
+
     void Start()
     {
-        
+        _chassis = GetComponent<CarChassis>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        for (int i = 0; i < _wheelsColliders.Length; i++)
-        {
-            _wheelsColliders[i].motorTorque = Input.GetAxis("Vertical") * _torqueMotor;
-            _wheelsColliders[i].brakeTorque = Input.GetAxis("Jump") * _torqueBreak;
-
-            Vector3 pos;
-            Quaternion rot;
-            _wheelsColliders[i].GetWorldPose(out pos, out rot);
-            _wheelsMeshes[i].position = pos;
-            _wheelsMeshes[i].rotation = rot;
-        }
-
-        _wheelsColliders[0].steerAngle = Input.GetAxis(horizontalAxis) * _steeringAngle;
-        _wheelsColliders[1].steerAngle = Input.GetAxis(horizontalAxis) * _steeringAngle;
+        _chassis.motorTorque = throttleControl * _maxMotorRorque;
+        _chassis.brakeTorque = brakeControl * _maxBrakeTorque;
+        _chassis.steerAngle = steerControl * _maxSteerAngle;
     }
 }
