@@ -347,15 +347,15 @@ WheelCollider:
   m_Center: {x: 0, y: 0.2, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 20000
-    damper: 60
+    spring: 10000
+    damper: 40
     targetPosition: 0.32
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 2.52
+  m_WheelDampingRate: 4
   m_ForwardFriction:
-    m_ExtremumSlip: 0.1
+    m_ExtremumSlip: 4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.1
     m_AsymptoteValue: 1
@@ -773,7 +773,7 @@ Transform:
   m_GameObject: {fileID: 858405672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.27, z: 0.006}
+  m_LocalPosition: {x: 0, y: -0.145, z: 0.006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -799,7 +799,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.9, y: 0.52, z: 2.21}
-  m_Center: {x: 0, y: -0.88, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &933557117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,15 +920,15 @@ WheelCollider:
   m_Center: {x: 0, y: 0.2, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 20000
-    damper: 60
+    spring: 10000
+    damper: 40
     targetPosition: 0.32
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 2.52
+  m_WheelDampingRate: 4
   m_ForwardFriction:
-    m_ExtremumSlip: 0.1
+    m_ExtremumSlip: 4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.1
     m_AsymptoteValue: 1
@@ -1144,15 +1144,15 @@ WheelCollider:
   m_Center: {x: 0, y: 0.2, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 20000
-    damper: 60
+    spring: 10000
+    damper: 40
     targetPosition: 0.32
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 2.52
+  m_WheelDampingRate: 4
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
@@ -1227,15 +1227,15 @@ WheelCollider:
   m_Center: {x: 0, y: 0.2, z: 0}
   m_Radius: 0.6
   m_SuspensionSpring:
-    spring: 20000
-    damper: 60
+    spring: 10000
+    damper: 40
     targetPosition: 0.32
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 2.52
+  m_WheelDampingRate: 4
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
@@ -1381,7 +1381,7 @@ MonoBehaviour:
     _rightWheelCollider: {fileID: 1119583591}
     _leftWheelMesh: {fileID: 1554986114}
     _rightWheelMesh: {fileID: 1466611232}
-    _additionalWheelDownForce: 50
+    _additionalWheelDownForce: 60
     _antiRolForce: 2000
     _wheelBaseWidth: 1.84
     _isMotor: 1
@@ -1394,7 +1394,7 @@ MonoBehaviour:
     _rightWheelCollider: {fileID: 1789550751}
     _leftWheelMesh: {fileID: 343981460}
     _rightWheelMesh: {fileID: 144974570}
-    _additionalWheelDownForce: 50
+    _additionalWheelDownForce: 60
     _antiRolForce: 2000
     _wheelBaseWidth: 1.84
     _isMotor: 1
