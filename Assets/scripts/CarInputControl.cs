@@ -33,6 +33,15 @@ public class CarInputControl : MonoBehaviour
         //_car.brakeControl = handBrakeAxisValue;
 
         UpdateAutoBrake();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            _car.UpGear();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            _car.DownGear();
+        }
     }
 
     private void UpdateSteer()
@@ -50,13 +59,23 @@ public class CarInputControl : MonoBehaviour
         if (Mathf.Sign(verticalAxisValue) == Mathf.Sign(_wheelSpeed) ||
             Mathf.Abs(_wheelSpeed) < 2100f)
         {
-            _car.throttleControl = verticalAxisValue;
+            _car.throttleControl = Mathf.Abs(verticalAxisValue);
             _car.brakeControl = 0;
         }
         else
         {
             _car.throttleControl = 0;
             _car.brakeControl = _brakeCurve.Evaluate(_wheelSpeed / _car.MaxSpeed);
+        }
+
+        //Gears
+        if (verticalAxisValue < 0 && _wheelSpeed > -0.5f && _wheelSpeed <= 0.5f)
+        {
+            _car.ShiftToReverseGear();
+        }
+        if (verticalAxisValue > 0 && _wheelSpeed > -0.5f && _wheelSpeed < 0.5f)
+        {
+            _car.ShiftToFirstGear();
         }
     }
 
