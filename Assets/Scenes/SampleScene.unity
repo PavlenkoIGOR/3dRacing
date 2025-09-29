@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 191058587}
   - component: {fileID: 191058586}
   - component: {fileID: 191058585}
+  - component: {fileID: 191058588}
   m_Layer: 0
   m_Name: Canvas_SpeedIndicator
   m_TagString: Untagged
@@ -331,6 +332,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &191058588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191058583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a25ba583299dd4a8c94af4583db2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1876933518}
+  _text: {fileID: 1708457985}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,15 +2045,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.20887911
       value: 0.07838552
-      inSlope: 0.29871386
-      outSlope: 0.29871386
+      inSlope: 0.016390815
+      outSlope: 0.016390815
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.3906046
     - serializedVersion: 3
-      time: 0.30324018
-      value: 0.16880205
+      time: 0.43394697
+      value: 0.15906695
       inSlope: 0.0061049424
       outSlope: 0.0061049424
       tangentMode: 0
@@ -2056,7 +2071,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.17222641
+      value: 0.22912644
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2072,15 +2087,15 @@ MonoBehaviour:
   _engineMinRPM: 800
   _engineMaxRPM: 7000
   _gears:
-  - 1.6
+  - 1.8
   - 1.2
   - 1
-  - 0.6
+  - 0.5
   _finalDriveRatio: 3.6
   _selectedGearIndex: 0
   _upShifEngineRPM: 6000
   _downShifEngineRPM: 3000
-  rearGear: -2
+  rearGear: -1.8
   _maxSpeed: 250
   throttleControl: 0
   steerControl: 0

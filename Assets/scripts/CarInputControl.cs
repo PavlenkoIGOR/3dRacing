@@ -34,14 +34,14 @@ public class CarInputControl : MonoBehaviour
 
         UpdateAutoBrake();
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            _car.UpGear();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _car.DownGear();
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    _car.UpGear();
+        //}
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    _car.DownGear();
+        //}
     }
 
     private void UpdateSteer()
@@ -57,7 +57,7 @@ public class CarInputControl : MonoBehaviour
     private void UpdateThrottleAndBrake()
     {
         if (Mathf.Sign(verticalAxisValue) == Mathf.Sign(_wheelSpeed) ||
-            Mathf.Abs(_wheelSpeed) < 2100f)
+            Mathf.Abs(_wheelSpeed) < 0.5f)
         {
             _car.throttleControl = Mathf.Abs(verticalAxisValue);
             _car.brakeControl = 0;

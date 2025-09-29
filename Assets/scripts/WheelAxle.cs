@@ -121,6 +121,18 @@ public class WheelAxle
     }
 
     /// <summary>
+    /// установка частоты обновлени€ колесного коллайдера колеса
+    /// </summary>
+    /// <param name="speedThreshold"></param>
+    /// <param name="speedBelowThreshold"></param>
+    /// <param name="stepAboveThreshold"></param>
+    public void ConfigureVehicleSubsteps(float speedThreshold, int speedBelowThreshold, int stepAboveThreshold)
+    {
+        _leftWheelCollider.ConfigureVehicleSubsteps(speedThreshold, speedBelowThreshold, stepAboveThreshold);
+        _rightWheelCollider.ConfigureVehicleSubsteps(speedThreshold, speedBelowThreshold, stepAboveThreshold);
+    }
+
+    /// <summary>
     /// ѕоворот колЄс
     /// </summary>
     /// <param name="steerAngle"></param>

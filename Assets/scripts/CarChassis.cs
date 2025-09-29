@@ -39,6 +39,11 @@ public class CarChassis : MonoBehaviour
         {
             _rigidbody.centerOfMass = _centerOfMass.localPosition;
         }
+
+        for (int i = 0; i < _wheelAxles.Length; i++)
+        {
+            _wheelAxles[i].ConfigureVehicleSubsteps(50,50,50);
+        }
     }
     private void FixedUpdate()
     {
