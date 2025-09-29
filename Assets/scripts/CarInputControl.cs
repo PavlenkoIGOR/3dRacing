@@ -25,7 +25,6 @@ public class CarInputControl : MonoBehaviour
         UpdateAxis();
 
         UpdateThrottleAndBrake();
-        UpdateBrake();
         UpdateSteer();
 
 

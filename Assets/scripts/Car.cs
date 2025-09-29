@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(CarChassis))]
 public class Car : MonoBehaviour
 {
+    public event UnityAction<string> gearChanged;
     private CarChassis _chassis;
 
     [SerializeField] private float _maxSteerAngle;
@@ -31,6 +33,8 @@ public class Car : MonoBehaviour
     public float LinearVelocity => _chassis.linearVelocity;
     public float WheelSpeed => _chassis.GetWheelSpeed();
     public float MaxSpeed => _maxSpeed;
+    public float engineRPM => _engineRPM;
+    public float engineMaxRPM => _engineMaxRPM;
 
     [Header("debug")]
     public float throttleControl;
@@ -67,7 +71,7 @@ public class Car : MonoBehaviour
         _engineRPM = Mathf.Clamp(_engineRPM, _engineMinRPM, _engineMaxRPM);
 
         //вычисление крутящего момента
-        _engineTorque = _engineTorqueCurve.Evaluate(_engineRPM / _engineMaxRPM) * _engineMaxTorque * _finalDriveRatio * Mathf.Abs(selectedGear);
+        _engineTorque = _engineTorqueCurve.Evaluate(_engineRPM / _engineMaxRPM) * _engineMaxTorque * _finalDriveRatio * Mathf.Sign(selectedGear);
     }
 
     /// <summary>
@@ -78,6 +82,8 @@ public class Car : MonoBehaviour
         gearIndex = Mathf.Clamp(gearIndex, 0, _gears.Length -1);
         selectedGear = _gears[gearIndex];
         _selectedGearIndex = gearIndex;
+
+        gearChanged?.Invoke(GetSelectedGearName());
     }
     public void UpGear()
     {
@@ -90,6 +96,7 @@ public class Car : MonoBehaviour
     public void ShiftToReverseGear()
     {
         selectedGear = rearGear;
+        gearChanged?.Invoke(GetSelectedGearName());
     }
     public void ShiftToFirstGear()
     {
@@ -98,6 +105,7 @@ public class Car : MonoBehaviour
     public void ShiftToNeutralGear()
     {
         selectedGear = 0;
+        gearChanged?.Invoke(GetSelectedGearName());
     }
 
     private void AutoGearShift()
@@ -114,5 +122,18 @@ public class Car : MonoBehaviour
         {
             DownGear();
         }            
+    }
+
+    public string GetSelectedGearName()
+    {
+        if (selectedGear == rearGear)
+        {
+            return "R";
+        }
+        if (selectedGear == 0)
+        {
+            return "N";
+        }
+        return (_selectedGearIndex + 1).ToString();
     }
 }

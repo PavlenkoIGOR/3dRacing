@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 0728135bde06fee4a8c61a7c2197bdac, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1508,6 +1508,8 @@ GameObject:
   - component: {fileID: 1409506150}
   - component: {fileID: 1409506149}
   - component: {fileID: 1409506148}
+  - component: {fileID: 1409506151}
+  - component: {fileID: 1409506152}
   m_Layer: 0
   m_Name: Canvas_EngineAndGearBox
   m_TagString: Untagged
@@ -1598,6 +1600,41 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1409506151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409506146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c9b452b597c254c9193f4ddb24a5ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1876933518}
+  _image: {fileID: 1111034956}
+  _colors:
+  - maxRPM: 4500
+    color: {r: 0, g: 1, b: 0.027956963, a: 0}
+  - maxRPM: 5000
+    color: {r: 1, g: 0.6920681, b: 0, a: 0}
+  - maxRPM: 6000
+    color: {r: 1, g: 0, b: 0, a: 0}
+--- !u!114 &1409506152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409506146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846535a2821af5a47bd6e59638935b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _car: {fileID: 1876933518}
+  _text: {fileID: 1491910721}
 --- !u!4 &1466611232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2577548232221058511, guid: 863288da317f1fd4a9d02554420e4ef8,
@@ -2087,8 +2124,8 @@ MonoBehaviour:
   _engineMinRPM: 800
   _engineMaxRPM: 7000
   _gears:
-  - 1.8
-  - 1.2
+  - 2
+  - 1.4
   - 1
   - 0.5
   _finalDriveRatio: 3.6
