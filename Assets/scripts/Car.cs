@@ -31,6 +31,7 @@ public class Car : MonoBehaviour
 
     [SerializeField] private float _maxSpeed;
     public float LinearVelocity => _chassis.linearVelocity;
+    public float NormalizeLinearVelocity => _chassis.linearVelocity / _maxSpeed;
     public float WheelSpeed => _chassis.GetWheelSpeed();
     public float MaxSpeed => _maxSpeed;
     public float engineRPM => _engineRPM;
