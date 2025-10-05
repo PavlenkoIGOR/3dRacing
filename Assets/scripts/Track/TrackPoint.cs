@@ -28,7 +28,7 @@ public class TrackPoint : MonoBehaviour
         _isTarget = false;
     }
 
-    public void AssignTarget()
+    public void AssignAsTarget()
     {
         _isTarget = true;
     }

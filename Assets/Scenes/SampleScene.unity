@@ -1064,6 +1064,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -28.55
       objectReference: {fileID: 0}
+    - target: {fileID: 6465615487930176651, guid: f60351beccd44c74caf402532097e7e6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2133,11 +2138,11 @@ MonoBehaviour:
   _image: {fileID: 1111034956}
   _colors:
   - maxRPM: 4500
-    color: {r: 0, g: 1, b: 0.027956963, a: 0}
+    color: {r: 0, g: 1, b: 0.027956963, a: 1}
   - maxRPM: 5000
-    color: {r: 1, g: 0.6920681, b: 0, a: 0}
+    color: {r: 1, g: 0.6920681, b: 0, a: 1}
   - maxRPM: 6000
-    color: {r: 1, g: 0, b: 0, a: 0}
+    color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1409506152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7326,6 +7331,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6465615487930176651, guid: f60351beccd44c74caf402532097e7e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465615487930176651, guid: f60351beccd44c74caf402532097e7e6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8668702980345330263, guid: f60351beccd44c74caf402532097e7e6,
         type: 3}
       propertyPath: m_IsTrigger
@@ -8248,6 +8263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -136.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465615487930176651, guid: f60351beccd44c74caf402532097e7e6,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -17,16 +17,15 @@ public class TrackPointCircuit : MonoBehaviour
 
     void Start()
     {
-        onLapCompleted += (TrackPoint) => { 
-            Debug.Log("asdasdasd"); 
-        };
+        onLapCompleted += (TrackPoint) => Debug.Log("asdasdasd"); 
+        
 
         for (int i = 0; i < _trackPoints.Length; i++)
         {
             _trackPoints[i].triggered += OnTrackPointTriggered;
         }
 
-        _trackPoints[0].AssignTarget();
+        _trackPoints[0].AssignAsTarget();
     }
 
 
@@ -46,7 +45,9 @@ public class TrackPointCircuit : MonoBehaviour
         }
 
         trackPoint.Passed();
-        trackPoint.nextpoint?.AssignTarget();
+        trackPoint.nextpoint?.AssignAsTarget();
+
+        trackPointTriggered?.Invoke(trackPoint);
 
         if (trackPoint.isLast == true)
         {
