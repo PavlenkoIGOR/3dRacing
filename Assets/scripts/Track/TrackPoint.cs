@@ -18,7 +18,6 @@ public class TrackPoint : MonoBehaviour
         {
             return;            
         }
-        Debug.Log($"{other.transform.root.name}");
         triggered?.Invoke(this);
     }
 
@@ -31,6 +30,13 @@ public class TrackPoint : MonoBehaviour
     public void AssignAsTarget()
     {
         _isTarget = true;
+    }
+
+    public void Reset()
+    {
+        nextpoint = null;
+        isFirst = false;
+        isLast = false;
     }
 
 }

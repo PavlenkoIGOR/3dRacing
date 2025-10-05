@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,13 +13,16 @@ public class TrackPointCircuit : MonoBehaviour
     public event UnityAction<TrackPoint> trackPointTriggered;
     public event UnityAction<int> onLapCompleted;
     [SerializeField] TrackType _type;
-    [SerializeField] TrackPoint[] _trackPoints;
+    TrackPoint[] _trackPoints;
     int _lapsCompleted = -1;
 
+    private void Awake()
+    {
+        BuildCrcuit();
+    }
     void Start()
     {
-        onLapCompleted += (TrackPoint) => Debug.Log("asdasdasd"); 
-        
+
 
         for (int i = 0; i < _trackPoints.Length; i++)
         {
@@ -28,6 +32,11 @@ public class TrackPointCircuit : MonoBehaviour
         _trackPoints[0].AssignAsTarget();
     }
 
+    [ContextMenu(nameof(BuildCrcuit))]
+    private void BuildCrcuit()
+    {
+        _trackPoints = TrackCircuitBuilder.Build(transform, _type);
+    }
 
     private void OnDestroy()
     {
