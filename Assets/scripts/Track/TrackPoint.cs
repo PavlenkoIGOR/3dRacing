@@ -4,6 +4,8 @@ using UnityEngine.Events;
 public class TrackPoint : MonoBehaviour
 {
     public event UnityAction<TrackPoint> triggered;
+    protected virtual void OnPassed() { }
+    protected virtual void OnAssignAsTarget() { }
 
     public TrackPoint nextpoint;
     public bool isFirst;
@@ -25,11 +27,13 @@ public class TrackPoint : MonoBehaviour
     public void Passed()
     {
         _isTarget = false;
+        OnPassed();
     }
 
     public void AssignAsTarget()
     {
         _isTarget = true;
+        OnAssignAsTarget();
     }
 
     public void Reset()

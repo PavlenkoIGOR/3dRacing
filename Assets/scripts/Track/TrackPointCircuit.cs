@@ -16,6 +16,8 @@ public class TrackPointCircuit : MonoBehaviour
     TrackPoint[] _trackPoints;
     int _lapsCompleted = -1;
 
+    public TrackType Type { get => _type; set => _type = value; }
+
     private void Awake()
     {
         BuildCrcuit();
