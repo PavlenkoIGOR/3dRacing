@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class CameraShaker : MonoBehaviour
+public class CameraShaker : CarCameraComponent
 {
-    [SerializeField] Car _car;
     [SerializeField] float _shakeAmount;
     [SerializeField] [Range(0.0f, 1.0f)] float _normalizeSpeedShake;
 

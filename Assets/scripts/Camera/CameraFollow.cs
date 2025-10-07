@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow : CarCameraComponent  
 {
-    [SerializeField] private Transform _target;
-    [SerializeField] private Rigidbody _rb;
+    private Transform _target;
+    private Rigidbody _rb;
 
     [Header("Offset")]
     [SerializeField] private float _viewHeight;
@@ -42,5 +42,12 @@ public class CameraFollow : MonoBehaviour
         transform.position = new Vector3(transform.position.x,currentHeight, transform.position.z);
 
         transform.LookAt(_target.position + new Vector3(0, _viewHeight, 0));
+    }
+
+    public override void SetProperties(Car car, Camera camera)
+    {
+        base.SetProperties(car, camera);
+        _target = car.transform;
+        _rb = car.rb;
     }
 }

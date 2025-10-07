@@ -29,7 +29,7 @@ public class CarChassis : MonoBehaviour
     public float steerAngle;
 
     private Rigidbody _rigidbody;
-
+    public Rigidbody rb => _rigidbody == null ? GetComponent<Rigidbody>() : _rigidbody;
 
     private void Start()
     {

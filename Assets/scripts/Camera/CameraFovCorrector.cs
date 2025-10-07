@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class CameraFovCorrector : MonoBehaviour
+public class CameraFovCorrector : CarCameraComponent
 {
-    [SerializeField] private Car _car;
-    [SerializeField] private Camera _camera;
     [SerializeField] float _minFieldOfView;
     [SerializeField] float _maxFieldOfView;
 

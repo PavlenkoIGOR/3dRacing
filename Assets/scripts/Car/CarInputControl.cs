@@ -92,4 +92,13 @@ public class CarInputControl : MonoBehaviour
             _car.brakeControl = _brakeCurve.Evaluate(_wheelSpeed / _car.MaxSpeed) * _autoBrakeStrength;
         }
     }
+
+    public void Stop()
+    {
+        verticalAxisValue = horizontalAxisValue = handBrakeAxisValue = 0;
+
+        _car.throttleControl = 0;
+        _car.steerControl = 0;
+        _car.brakeControl = 1;
+    }
 }

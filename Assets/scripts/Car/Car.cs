@@ -8,6 +8,7 @@ public class Car : MonoBehaviour
 {
     public event UnityAction<string> gearChanged;
     private CarChassis _chassis;
+    public Rigidbody rb => _chassis == null ? GetComponent<CarChassis>().rb : _chassis.rb;
 
     [SerializeField] private float _maxSteerAngle;
     [SerializeField] private float _maxBrakeTorque;

@@ -1,11 +1,11 @@
 using TMPro;
 using UnityEngine;
 
-public class UICountdownTimer : MonoBehaviour
+public class UICountdownTimer : MonoBehaviour, IDependency<RaceStateTracker>
 {
     [SerializeField] TMP_Text _text;
-    [SerializeField] Timer _countdownTimer;
-    [SerializeField] RaceStateTracker _raceStateTracker;
+    //Timer _countdownTimer;
+    RaceStateTracker _raceStateTracker;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +35,17 @@ public class UICountdownTimer : MonoBehaviour
     }
     private void Update()
     {
-        _text.text = _countdownTimer.Value.ToString("F0");
+        _text.text = _raceStateTracker.countdownTimer.Value.ToString("F0");
 
         if (_text.text == "0")
         {
             _text.text = "GO!";
         }
+    }
+
+    public void Construct(RaceStateTracker t)
+    {
+        _raceStateTracker = t;
+
     }
 }
