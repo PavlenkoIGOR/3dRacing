@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 [RequireComponent(typeof(Rigidbody))]
 public class CarChassis : MonoBehaviour
@@ -108,5 +104,11 @@ public class CarChassis : MonoBehaviour
             _wheelAxles[i].ApplyBreakTorque(brakeTorque);
 
         }
+    }
+
+    public void ChassisReset()
+    {
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
     }
 }

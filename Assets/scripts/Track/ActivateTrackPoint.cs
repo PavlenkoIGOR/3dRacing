@@ -6,7 +6,7 @@ public class ActivateTrackPoint : TrackPoint
     // Start is called before the first frame update
     void Start()
     {
-        _hint.SetActive(false);
+        _hint.SetActive(isTarget);
     }
 
     protected override void OnPassed()

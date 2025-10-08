@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -137,5 +137,27 @@ public class Car : MonoBehaviour
             return "N";
         }
         return (_selectedGearIndex + 1).ToString();
+    }
+
+    public void Respawn(Vector3 position, Quaternion rotation)
+    {
+        CarReset();
+
+        transform.rotation = rotation;
+        transform.position = position;
+    }
+
+    private void CarReset()
+    {
+        _chassis.ChassisReset();
+
+        _chassis.motorTorque = 0;
+        _chassis.brakeTorque = 0;
+        _chassis.steerAngle = 0;
+
+        throttleControl = 0;
+        brakeControl = 0;
+        steerControl = 0;
+        
     }
 }

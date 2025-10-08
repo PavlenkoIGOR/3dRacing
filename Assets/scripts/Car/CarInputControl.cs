@@ -95,10 +95,17 @@ public class CarInputControl : MonoBehaviour
 
     public void Stop()
     {
-        verticalAxisValue = horizontalAxisValue = handBrakeAxisValue = 0;
+        ControlReset();
 
+
+        _car.brakeControl = 1;
+    }
+
+    public void ControlReset()
+    {
+        verticalAxisValue = horizontalAxisValue = handBrakeAxisValue = 0;
         _car.throttleControl = 0;
         _car.steerControl = 0;
-        _car.brakeControl = 1;
+        _car.brakeControl = 0;
     }
 }
