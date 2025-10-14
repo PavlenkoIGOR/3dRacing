@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isInteractable: 1
-  onClicked:
+  OnClick:
     m_PersistentCalls:
       m_Calls: []
   _selectImg: {fileID: 1053464215266805297}

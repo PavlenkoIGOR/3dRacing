@@ -41,7 +41,9 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             return;
         }
 
-        pointerEnter?.Invoke(this);
+        //pointerEnter?.Invoke(this);
+
+        Debug.Log("UI_Button OnPointerEnter");
     }
 
 
