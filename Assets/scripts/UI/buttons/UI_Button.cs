@@ -34,20 +34,20 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     }
 
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         if (_isInteractable == false)
         {
             return;
         }
 
-        //pointerEnter?.Invoke(this);
+        pointerEnter?.Invoke(this);
 
         Debug.Log("UI_Button OnPointerEnter");
     }
 
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         if (_isInteractable == false)
         {
@@ -56,7 +56,7 @@ public class UI_Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         pointerExit?.Invoke(this);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         if (_isInteractable == false)
         {

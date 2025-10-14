@@ -143,7 +143,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4505225876298385460}
-  - component: {fileID: 8685352600000381543}
+  - component: {fileID: 7594398567208639828}
+  - component: {fileID: 4290498570852589635}
+  - component: {fileID: 5017117735133897905}
   m_Layer: 5
   m_Name: RaceBttn
   m_TagString: Untagged
@@ -172,7 +174,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8685352600000381543
+--- !u!222 &7594398567208639828
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883062948288322946}
+  m_CullTransparentMesh: 1
+--- !u!114 &4290498570852589635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,11 +191,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 4883062948288322946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d133ef54575324895740d76fce4063, type: 3}
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
+--- !u!114 &5017117735133897905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4883062948288322946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a645efd5f5d96a3439ad8edfa188cff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _isInteractable: 1
-  onClicked:
+  OnClick:
     m_PersistentCalls:
       m_Calls: []
   _selectImg: {fileID: 3551871832821417293}
@@ -195,6 +225,9 @@ MonoBehaviour:
   onUnSelect:
     m_PersistentCalls:
       m_Calls: []
+  _raceInfo: {fileID: 11400000, guid: 60077862a1912884bafba1f96c9f8631, type: 2}
+  _icon: {fileID: 4456026393927893070}
+  _title: {fileID: 1907632961644041126}
 --- !u!1 &8534873763840475638
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +356,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8717014545691559761}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

@@ -5,7 +5,7 @@ public class UISelectableBttnContainer : MonoBehaviour
     [SerializeField] Transform _bttnsContainer;
 
     public bool interactable = true;
-    public bool SetInteractable(bool interact) => interactable = interact;
+    public void SetInteractable(bool interact) => interactable = interact;
 
     UISelectableBttn[] _bttns;
     int _selectBttnIndex = 0;

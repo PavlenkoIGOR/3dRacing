@@ -13,6 +13,8 @@ public class UISelectableBttn : UI_Button
         base.SetFocus();
         _selectImg.enabled = true;
         onSelect?.Invoke();
+
+        Debug.Log("SetFocus");
     }
 
     public override void SetUnFocus()
